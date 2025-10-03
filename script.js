@@ -13,32 +13,26 @@ myPlane.columnas;
 myPlane.nombre;
 myPlane.precio;
 myPlane.asientos;
-myPlane.reservar =function() {
-  
-};
-myPlane.liberar =function() {
-  
-};
-
+myPlane.reservar =function() {};
+myPlane.liberar =function() {};
 var Plane= function (filas,columnas,nombre,precio){
   this.filas= filas;
   this.columnas= columnas;
   this.nombre= nombre;
   this.precio= precio;
-  this.reservar= function(){
-    
-  } ;
-  this.liberar= function(){
-    
-  } ;
   // Crear matriz de asientos
+  document.write ("<section class='sectionHorizontal'>");
   this.asientos = [];
   for (let f = 0; f < filas; f++) {
+    document.write ("<section class='sectionHorizontal1'>");
     this.asientos[f] = [];
     for (let c = 0; c < columnas; c++) {
+      document.write ("<div class='asiento'>" + c + "</div>");
       this.asientos[f][c] = false; 
     }
+    document.write ("</section>");
   }
+  document.write ("</section>");
 
   // Método para reservar un asiento
   this.reservar = function (fila, columna) {
@@ -68,7 +62,4 @@ var Plane= function (filas,columnas,nombre,precio){
     }
   };
 }
-let teatro = new Plane(6, 20, "binter", 10);
-
-teatro.reservar(2, 3);  
-teatro.liberar(7, 2);   
+let avion = new Plane(4, 45, "binter", 10);
